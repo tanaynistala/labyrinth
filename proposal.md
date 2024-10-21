@@ -32,7 +32,24 @@ Such methods would allow us to evaluate and compare multiple algorithms and filt
 
 ## Timeline and Individual Responsibilities
 
-State the timeline in terms of weeks and milestones you want to achieve. If working on a team, state what the individual responsibilities are at this point (i.e., who is going to do what, these may of course change over the course of the project). [1].
+We will be discussing over tomorrow on the timeline and individual responsibilities for the project. 
+
+Iris will be responsible for researching the sensor APIs, and helping to implement the logic of the follow drones. 
+
+Tanay will be responsible for researching the algorithm for the project, as well as the math and the error of the main drone. 
+
+Steph will be responsible for doing the logic of the follower drones, and researching different algorithms. 
+
+The timeline of the project will be as follows: 
+
+October 22nd - submit project proposal
+October 29th - research the drones and their sensor APIs
+November 5th - research the different algorithms 
+November 12th - write code for the main drone to start testing one algorithm
+November 19th - see if that drone works, check for error and noise; otherwise, try a different algorithm
+November 26th - start working on follower drone code 
+December 3rd - start writing up final paper 
+December 10th - do a final presentation 
 
 ## References
 
