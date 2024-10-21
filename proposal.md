@@ -4,19 +4,19 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 ## Introduction
 
-The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?
+*The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?*
 
 ## Background Related Work
 
-Following, you should provide the necessary background and discuss related work in the RL literature. This section should also be about a page. Citations should be in BibTeX format [2].
+*Following, you should provide the necessary background and discuss related work in the RL literature. This section should also be about a page. Citations should be in BibTeX format [2].*
 
 ## Technical Approach / Methodology / Theoretical Framework
 
-Describe how you will approach the problem and its technical formulation. Feel free to re-state the basic RL formulas (e.g., if using Q-learning, state the update rule or the formula for what the Q function approximates).
+*Describe how you will approach the problem and its technical formulation. Feel free to re-state the basic RL formulas (e.g., if using Q-learning, state the update rule or the formula for what the Q function approximates).*
 
 ### Tasks
 
-Subsections are useful for breaking down the problem into sub-parts. For example, you could break down the tasks for your project and list them one by one.
+*Subsections are useful for breaking down the problem into sub-parts. For example, you could break down the tasks for your project and list them one by one.*
 
 ## Evaluation
 
@@ -31,6 +31,8 @@ Comparison amongst the swarm's drones may be implemented in one of two ways. One
 Such methods would allow us to evaluate and compare multiple algorithms and filters to identify their effectiveness in navigating in a multi-agent environment, as well as possibly exploring the interaction of drones with different algorithms in the same swarm.
 
 ## Timeline and Individual Responsibilities
+
+*State the timeline in terms of weeks and milestones you want to achieve. If working on a team, state what the individual responsibilities are at this point (i.e., who is going to do what, these may of course change over the course of the project). [1].*
 
 We will be discussing over tomorrow on the timeline and individual responsibilities for the project. 
 
@@ -104,7 +106,7 @@ December 10th - do a final presentation
   doi = {10.1139/juvs-2018-0009}}
 ```
 
-```BibTex
+```BibTeX
 @ARTICLE{s21082642,
   author = {Asaamoning, Godwin and Mendes, Paulo and Rosário, Denis and Cerqueira, Eduardo},
   title = {Drone Swarms as Networked Control Systems by Integration of Networking and Computing},
@@ -117,5 +119,36 @@ December 10th - do a final presentation
   pubmedid = {33918696},
   issn = {1424-8220},
   doi = {10.3390/s21082642}
+}
+```
+
+```BibTeX
+@inproceedings{putra2020research,
+  title={Research on swarm drone using wireless navigation network in performing bird model swarm drone},
+  author={Putra, YEFFRY HANDOKO},
+  booktitle={Journal of Engineering Science and Technology 2nd International Conference on Informatics, Engineering, Science, and Technology 2019},
+  pages={45--53},
+  year={2020}
+}
+```
+
+```BibTeX
+@inproceedings{reynolds1987flocks,
+  title={Flocks, herds and schools: A distributed behavioral model},
+  author={Reynolds, Craig W},
+  booktitle={Proceedings of the 14th annual conference on Computer graphics and interactive techniques},
+  pages={25--34},
+  year={1987}
+}
+```
+
+```BibTeX
+@inproceedings{preiss2017crazyswarm,
+  title={Crazyswarm: A large nano-quadcopter swarm},
+  author={Preiss, James A and Honig, Wolfgang and Sukhatme, Gaurav S and Ayanian, Nora},
+  booktitle={2017 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages={3299--3304},
+  year={2017},
+  organization={IEEE}
 }
 ```
