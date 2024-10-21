@@ -6,6 +6,8 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 *The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?*
 
+Our project will deal with drone localization, and how drones detect . We will use a controller to control 2 or more drones which also have the ability to decouple from each other and snap back together. Once they decouple from each other, the controller can move each drone independently. Each drone is capable of figuring out where they are in a certain space, and has a feature to detect where the other drone is. When the drones are coupled together again, a new distance is calculated between them, and they will move together via translation, always maintaining the same distance until decoupled again.
+
 ## Background Related Work
 
 *Following, you should provide the necessary background and discuss related work in the RL literature. This section should also be about a page. Citations should be in BibTeX format [2].*
