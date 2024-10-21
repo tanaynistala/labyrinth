@@ -6,7 +6,7 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 *The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?*
 
-Our project will aim to create a way to control multiple drones at once in a swarm formation.
+Our project will aim to create a way to control multiple drones at once in a swarm formation. Previous works related to drone control were mostly relegated to figuring out how to control drones swarming in a fixed fashion, like translating together or rotating. We aim to trial a new algorithm of dynamic controlling a drone swarm, allowing the drones to move independently or together in a certain environment as the user wishes. This new method is more flexible and allows for more diverse movement, adding to the already fascinating drone localization problem. 
 
 ## Background Related Work
 
