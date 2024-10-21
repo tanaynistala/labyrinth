@@ -6,7 +6,7 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 *The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?*
 
-Our project will deal with drone localization, and how drones detect . We will use a controller to control 2 or more drones which also have the ability to decouple from each other and snap back together. Once they decouple from each other, the controller can move each drone independently. Each drone is capable of figuring out where they are in a certain space, and has a feature to detect where the other drone is. When the drones are coupled together again, a new distance is calculated between them, and they will move together via translation, always maintaining the same distance until decoupled again.
+Our project will aim to create a way to control multiple drones at once in a swarm formation.
 
 ## Background Related Work
 
@@ -20,7 +20,9 @@ At the high-level many researchers have explored schemes for coordinating drone 
 
 ## Technical Approach / Methodology / Theoretical Framework
 
-*Describe how you will approach the problem and its technical formulation. Feel free to re-state the basic RL formulas (e.g., if using Q-learning, state the update rule or the formula for what the Q function approximates).*
+*Describe how you will approach the problem and its technical formulation.*
+
+Our project will deal with drone localization, and how drones detect each other. We will use a controller to control 2 or more drones which also have the ability to decouple from each other and snap back together. Once they decouple from each other, the controller can move each drone independently. Each drone is capable of figuring out where they are in a certain space, and has a feature to detect where the other drone is. When the drones are coupled together again, a new distance is calculated between them, and they will move together via translation, always maintaining the same distance until decoupled again.
 
 ### Tasks
 
