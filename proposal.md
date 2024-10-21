@@ -10,6 +10,12 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 *Following, you should provide the necessary background and discuss related work in the RL literature. This section should also be about a page. Citations should be in BibTeX format [2].*
 
+Swarm robotics involves an integration of agent orchestration at both a low-level and a high-level, and both levels have been the subject of robotics research.
+
+At a low level, Preiss et al. 2017 introduced the *Crazyswarm* as an architecture for reliably and precisely tracking miniature quadcopters indoors within the constraints of the sensors and networking infrastructure.
+
+At the high-level many researchers have explored schemes for coordinating drone swarms. Reynolds 1987 introduced a particle-based behavioral model of bird flocks, which was later explored by Putra 2020
+
 ## Technical Approach / Methodology / Theoretical Framework
 
 *Describe how you will approach the problem and its technical formulation. Feel free to re-state the basic RL formulas (e.g., if using Q-learning, state the update rule or the formula for what the Q function approximates).*
@@ -44,14 +50,18 @@ Steph will be responsible for doing the logic of the follower drones, and resear
 
 The timeline of the project will be as follows: 
 
-October 22nd - submit project proposal
-October 29th - research the drones and their sensor APIs
-November 5th - research the different algorithms 
-November 12th - write code for the main drone to start testing one algorithm
-November 19th - see if that drone works, check for error and noise; otherwise, try a different algorithm
-November 26th - start working on follower drone code 
-December 3rd - start writing up final paper 
-December 10th - do a final presentation 
+| Week | Date        | Task                                                   |
+| ---- | ----------- | ------------------------------------------------------ |
+| 1    | October 22  | Initial project proposal and research                  |
+| 2    | October 29  | Get acquainted with Crazyflie drones, sensors, and API |
+| 3    | November 5  | Implement basic synchronized movement/control          |
+| 4    | November 12 | ...                                                    |
+| 5    | November 19 | Implement coupling/decoupling algorithm/mechanism      |
+| 6    | November 26 | ...                                                    |
+| 7    | December 3  | Testing and debugging                                  |
+| 8    | December 10 | Final project presentation                             |
+| 9    | December 17 | Final project report                                   |
+
 
 ## References
 
