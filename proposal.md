@@ -6,7 +6,11 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 [//]: # (The introduction should describe the problem in a non-technical manner, i.e., without math, equations, etc., as well as motivate the problem, i.e., why is it important?)
 
-Our project will aim to create a way to control multiple drones at once in a swarm formation. Previous works related to drone control were mostly relegated to figuring out how to control drones swarming in a fixed fashion, like translating together or rotating. We aim to trial a new algorithm of dynamic controlling a drone swarm, allowing the drones to move independently or together in a certain environment as the user wishes. This new method is more flexible and allows for more diverse movement, adding to the already fascinating drone localization problem. 
+In the field of robotics, swarms pose an interesting challenge due to the high level of integration and orchestration required to achieve multi-agent collaboration on a task, and do so efficiently. Meanwhile, the medium of drones has received special focus due to the potential applications, which can range from their use in logistics, as popularized by high-profile public trials by companies like Amazon and Walmart, to light shows, surveillance, and more.
+
+In bringing swarm robotics to drones, a core concern has been the problem of control. Highly coordinated actions like light shows require large amounts of preconfiguration, synchronization, and testing to get right, while achieving natural, teleoperated human control can pose a problem owing to the complexity of managing multiple drones at once. As a result, many applications drone swarm control use fixed formations of drones, with all drones translating or rotating together, and formation changes requiring new system parameters or setups, like targeting points.
+
+We propose to develop a method of controlling a swarm drones while incorporating the ability to create and use a multitude of drone formations. This will require the ability to couple and decouple the drones from each other as the user creates new formations, and may open the doors to create more dynamic and open control systems for human controllers. This new method is more flexible and allows for more diverse movement, adding to the already fascinating drone localization problem. 
 
 ## Background Related Work
 
