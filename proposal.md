@@ -4,33 +4,33 @@ Iris Yang, Stephanie Wilson, and Tanay Nistala
 
 ## Introduction
 
-*The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?*
+[//]: # (The introduction should describe the problem in a non-technical manner, i.e., without math, equations, etc., as well as motivate the problem, i.e., why is it important?)
 
 Our project will aim to create a way to control multiple drones at once in a swarm formation. Previous works related to drone control were mostly relegated to figuring out how to control drones swarming in a fixed fashion, like translating together or rotating. We aim to trial a new algorithm of dynamic controlling a drone swarm, allowing the drones to move independently or together in a certain environment as the user wishes. This new method is more flexible and allows for more diverse movement, adding to the already fascinating drone localization problem. 
 
 ## Background Related Work
 
-*Following, you should provide the necessary background and discuss related work in the RL literature. This section should also be about a page. Citations should be in BibTeX format [2].*
+[//]: # (Following, you should provide the necessary background and discuss related work in the RL literature. This section should also be about a page. Citations should be in BibTeX format [2].)
 
 Swarm robotics involves an integration of agent orchestration at both a low-level and a high-level, and both levels have been the subject of robotics research.
 
-At a low level, Preiss et al. 2017 introduced the *Crazyswarm* as an architecture for reliably and precisely tracking miniature quadcopters indoors within the constraints of the sensors and networking infrastructure.
+At a low level, Preiss et al. 2017 introduced the *Crazyswarm* as an architecture for reliably and precisely tracking miniature quadcopters indoors within the constraints of the sensors and networking infrastructure, and also coincidentally uses the same nano-quadcopter platform that we will employ. Meanwhile, Campion 2018 further describes various communication architectures for swarm networks.
 
-At the high-level many researchers have explored schemes for coordinating drone swarms. Reynolds 1987 introduced a particle-based behavioral model of bird flocks, which was later explored by Putra 2020
+At the high-level many researchers have explored schemes for coordinating drone swarms. Reynolds 1987 introduced a particle-based behavioral model of bird flocks, which was later expanded upon by Putra 2020. Bertizzolo 2020 and Asaamoning 2021 presented similar frameworks that optimize for fluctuating, dynamic system constraints and utilize concepts from distributed systems. 
 
 ## Technical Approach / Methodology / Theoretical Framework
 
-*Describe how you will approach the problem and its technical formulation.*
+[//]: # (Describe how you will approach the problem and its technical formulation.)
 
 Our project will deal with drone localization, and how drones detect each other. We will use a controller to control 2 or more drones which also have the ability to decouple from each other and snap back together. Once they decouple from each other, the controller can move each drone independently. Each drone is capable of figuring out where they are in a certain space, and has a feature to detect where the other drone is. When the drones are coupled together again, a new distance is calculated between them, and they will move together via translation, always maintaining the same distance until decoupled again.
 
 ### Tasks
 
-*Subsections are useful for breaking down the problem into sub-parts. For example, you could break down the tasks for your project and list them one by one.*
+[//]: # (Subsections are useful for breaking down the problem into sub-parts. For example, you could break down the tasks for your project and list them one by one.)
 
 ## Evaluation
 
-*Describe how you will evaluate your approach/solution. What constitutes success? What metrics will you use? Do you have any preliminary hypothesis that you plan to test? Also, describe the RL domain or environment you plan to use.*
+[//]: # (Describe how you will evaluate your approach/solution. What constitutes success? What metrics will you use? Do you have any preliminary hypothesis that you plan to test? Also, describe the RL domain or environment you plan to use.)
 
 Evaluation of the drones' swarm behavior will be conducted in a two-fold manner: against the behavior of a solo, non-coupled drone, and amongst other drones in the swarm.
 
@@ -42,7 +42,7 @@ Such methods would allow us to evaluate and compare multiple algorithms and filt
 
 ## Timeline and Individual Responsibilities
 
-*State the timeline in terms of weeks and milestones you want to achieve. If working on a team, state what the individual responsibilities are at this point (i.e., who is going to do what, these may of course change over the course of the project). [1].*
+[//]: # (State the timeline in terms of weeks and milestones you want to achieve. If working on a team, state what the individual responsibilities are at this point i.e., who is going to do what, these may of course change over the course of the project. [1].)
 
 We will be discussing over tomorrow on the timeline and individual responsibilities for the project. 
 
