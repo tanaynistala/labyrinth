@@ -28,7 +28,8 @@ At the high-level many researchers have explored schemes for coordinating drone 
 
 Our project will deal with drone localization, and how drones detect each other. We will use a controller to control 2 or more drones which also have the ability to decouple from each other and snap back together. Once they decouple from each other, the controller can move each drone independently. Each drone is capable of figuring out where they are in a certain space, and has a feature to detect where the other drone is. When the drones are coupled together again, a new distance is calculated between them, and they will move together via translation, always maintaining the same distance until decoupled again.
 
-
+Because the environment the drones are flying in are nonlinear, we will be using an extended Kalman filter algorithm at first to linearize the current estimate. We'll be using the positioning system to calculate 3D coordinates for the location of each drone. However, there may be a high number of inaccuracies or uncertainities in our nonlinear environment, more than the Kalman filter can 
+model accurately. In this case, we may transition to a particle filter algorithm. The sensor data we get is crucial, because different filters respond differently to sensor noise and inaccuracies. 
 
 ### Tasks
 
