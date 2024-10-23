@@ -28,9 +28,26 @@ At the high-level many researchers have explored schemes for coordinating drone 
 
 Our project will deal with drone localization, and how drones detect each other. We will use a controller to control 2 or more drones which also have the ability to decouple from each other and snap back together. Once they decouple from each other, the controller can move each drone independently. Each drone is capable of figuring out where they are in a certain space, and has a feature to detect where the other drone is. When the drones are coupled together again, a new distance is calculated between them, and they will move together via translation, always maintaining the same distance until decoupled again.
 
+
+
 ### Tasks
 
 [//]: # (Subsections are useful for breaking down the problem into sub-parts. For example, you could break down the tasks for your project and list them one by one.)
+
+Our tasks over the next 8 weeks are as follows: 
+- Get acquainted with Crazyflie drones, sensors, and API. We will be going into 
+the lab to look over the type of sensors that the drones have, how to access 
+their API, and what commands we can use to move the drones around. 
+- Implement basic synchronized movement/control. After getting acquainted with the 
+drones' API and sensors, we will implement code to move the drones via 
+translation. This will be a Kalman filter algorithm at first, accounting for the nonlinear 
+environment of the drone. Later, if needed because of noise and inaccuracies, we 
+may transition to a particle filter algorithm. 
+- Implement coupling/decoupling algorithm/mechanism. After successfully translating 
+the drones, we will think of a new algorithm to successfully couple and decouple the 
+drones, allowing the user the ability to have the drones move independently, and 
+then together again with the click of a button. 
+
 
 ## Evaluation
 
@@ -47,8 +64,6 @@ Such methods would allow us to evaluate and compare multiple algorithms and filt
 ## Timeline and Individual Responsibilities
 
 [//]: # (State the timeline in terms of weeks and milestones you want to achieve. If working on a team, state what the individual responsibilities are at this point i.e., who is going to do what, these may of course change over the course of the project. [1].)
-
-We will be discussing over tomorrow on the timeline and individual responsibilities for the project. 
 
 Iris will be responsible for researching the sensor APIs, and helping to implement the logic of the follow drones. 
 
