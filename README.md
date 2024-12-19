@@ -2,10 +2,9 @@
 
 This project is provided as a `catkin` workspace containing several ROS packages:
 
-- [project name]
-- navigation
-- slam
-- simulation
+- `turtlebot`
+- `turtlebot_mazesolver`
+- `turtlebot_navigation`
 
 ## System Requirements
 
@@ -22,13 +21,13 @@ source ./devel/setup.bash
 The project demonstrations can then be run. To run the exploration demonstration, where the robot explores the environment autonomously, run:
 
 ```bash
-roslaunch [project_name] explore.launch slam_methods:=[gmapping,hector,karto] map:=maze[1,2,3,4,5]
+roslaunch turtlebot_mazesolver explore.launch slam_methods:=[gmapping,hector,karto] map:=maze[1,2,3,4,5]
 ```
 
 To run the maze solver, run:
 
 ```bash
-roslaunch [project_name] navigate.launch slam_methods:=[gmapping,hector,karto] map:=maze[1,2,3,4,5]
+roslaunch turtlebot_mazesolver navigate.launch slam_methods:=[gmapping,hector,karto] map:=maze[1,2,3,4,5]
 ```
 
 This will launch an `rviz` visualization where you can set a navigation goal (using the button on the UI) to tell the robot where the maze's exit is. You can use the accompanying Gazebo visualization to find this exit. 
