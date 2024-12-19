@@ -1,20 +1,33 @@
-# ProbRob-Final-Project
+# [Project Name]
 
-To activate the new ROS2 Jazzy - Gazebo Harmonic framework, run the following command:
-source /Users/tanaynistala/ros2_jazzy/activate_ros
+This project is provided as a `catkin` workspace containing several ROS packages:
 
-Then, try 'ros2' or 'rviz2' in the terminal to start ROS2 Jazzy.
+- `turtlebot`
+- `turtlebot_mazesolver`
+- `turtlebot_navigation`
 
-To test gazebo, run following commands separately in two termianls (one for server(-s) and one for gui(-g))
-(IMPORTANT, both terminals should have 'source /Users/tanaynistala/.ros2_venv/activate_ros' activated)
-  [1st Terminal with (.ros2_venv)] gz sim shapes.sdf -s 
-  [2nd Terminal with (.ros2_venv)] gz sim -g 
-===========================================================================
-To make alias for fast start, run the following command to add to ~/.zprofile:
-echo 'alias ros="source /Users/tanaynistala/ros2_jazzy/activate_ros"' >> ~/.zprofile && source ~/.zprofile
+## System Requirements
 
-Then, you can start ROS2 Jazzy - Gazebo Harmonic framework by typing 'ros' in the terminal (new terminal).
-You may change the alias name to your preference in above alias command.
+The packages for this project are built for [ROS Noetic](http://wiki.ros.org/noetic), which is additionally dependent on Ubuntu Focal (20.04). Instructions for installing ROS Noetic can be found [here](http://wiki.ros.org/noetic/Installation/Ubuntu).
 
-To deactivate this workspace, run:
-deactivate
+## Installation & Usage
+
+The packages provided can be installed by running `catkin_make` within this repository (at the current level). Once installed, source the project environment:
+
+```bash
+source ./devel/setup.bash
+```
+
+The project demonstrations can then be run. To run the exploration demonstration, where the robot explores the environment autonomously, run:
+
+```bash
+roslaunch turtlebot_mazesolver explore.launch slam_methods:=[gmapping,hector,karto] map:=maze[1,2,3,4,5]
+```
+
+To run the maze solver, run:
+
+```bash
+roslaunch turtlebot_mazesolver navigate.launch slam_methods:=[gmapping,hector,karto] map:=maze[1,2,3,4,5]
+```
+
+This will launch an `rviz` visualization where you can set a navigation goal (using the button on the UI) to tell the robot where the maze's exit is. You can use the accompanying Gazebo visualization to find this exit. 
