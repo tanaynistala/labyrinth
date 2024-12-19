@@ -7,12 +7,6 @@
   <arg name="x_pos" default="0"/>
   <arg name="y_pos" default="0"/>
 
-  <!-- Turtlebot3 Gazebo -->
-  <!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
-    <arg name="model" value="$(arg model)"/>
-    <arg name="x_pos" value="-2.0"/>
-  </include> -->
-
   <!-- Simulation world and node -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find turtlebot_mazesolver)/worlds/$(arg world)/world.world"/>
@@ -39,7 +33,7 @@
   </include>
 
   <!-- Node for autonomous mapping -->
-  <!-- <node name="explore" pkg="turtlebot_mazesolver" type="explore.py" output="screen"/> -->
+  <node name="explore" pkg="turtlebot_mazesolver" type="explore.py" output="screen"/>
 
   <!-- Rviz -->
   <node name="rviz" pkg="rviz" type="rviz" args="$(arg rviz_arg)"/>

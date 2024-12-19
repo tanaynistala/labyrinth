@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(turtlebot_navigation_and_mapping)
+project(turtlebot_mazesolver)
 
 ## Find catkin macros and libraries
 find_package(catkin

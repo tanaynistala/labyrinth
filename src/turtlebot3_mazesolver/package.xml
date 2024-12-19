@@ -4,6 +4,9 @@
   <version>0.0.1</version>
   <description>Uses the turtlebot to solve a maze using SLAM algorithms</description>
 
+  <maintainer email="tanay.nistala@tufts.edu">Tanay Nistala</maintainer>
+  <author email="tanay.nistala@tufts.edu">Tanay Nistala</author>
+
   <license>GPLv3</license>
 
   <buildtool_depend>catkin</buildtool_depend>
