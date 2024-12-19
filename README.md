@@ -1,4 +1,4 @@
-# [Project Name]
+# README
 
 This project is provided as a `catkin` workspace containing several ROS packages:
 
