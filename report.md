@@ -1,4 +1,4 @@
-# [PROJECT NAME]
+# Turtlebot Maze Solver
 
 Tanay Nistala, Stephanie Wilson, Iris Yang
 
@@ -16,13 +16,13 @@ For a robot to traverse a maze (or any environment, for that matter), it typical
 
 Producing a map of the environment is possible with the right sensor data and odometry, and simultaneous localization and mapping (SLAM) algorithms provide a means of doing so while also allowing the robot to localize itself within the unfamiliar environment. A similar issue is raised here, however, as these algorithms typically require manual teleoperated control through the unknown environment in order to build the map for future use. 
 
-This creates a dilemma: traversing an environment autonomously requires a previously prepared map, which can itself only be produced through manual navigation. However, the modular framework provided by the Robot Operating System (ROS) lends itself well to the approach devised for solving this problem. For [PROJECT NAME], separate nodes can be initialized for navigation and SLAM, wherein the former "disguises" itself as a manual controller for the robot, while using odometry data published by the latter concurrently.
+This creates a dilemma: traversing an environment autonomously requires a previously prepared map, which can itself only be produced through manual navigation. However, the modular framework provided by the Robot Operating System (ROS) lends itself well to the approach devised for solving this problem. For this maze solver, separate nodes can be initialized for navigation and SLAM, wherein the former "disguises" itself as a manual controller for the robot, while using odometry data published by the latter concurrently.
 
 Further sections explain the setup of such a system in greater detail.
 
 ### Sensor Data & Odometry
 
-Sensor data and odometry are crucial for the localization of the robot, as this forms the base of reliability for future steps of [PROJECT NAME]. Robust localization leads to more trustworthy data for mapping within the SLAM node, which in turn increases the accuracy of odometry passed on to the navigation node. Two main data sources are used for this: raw positional odometry from the robot's drive base, and LIDAR scanner measurements. 
+Sensor data and odometry are crucial for the localization of the robot, as this forms the base of reliability for future steps of this maze solver. Robust localization leads to more trustworthy data for mapping within the SLAM node, which in turn increases the accuracy of odometry passed on to the navigation node. Two main data sources are used for this: raw positional odometry from the robot's drive base, and LIDAR scanner measurements. 
 
 The robot's drive base continually computes estimates the current position and pose (heading) from a calibrated base point (which is typically the point of initialization). This utilizes known data about the size of the robot's wheels along with the drive motors' operating speeds:
 
