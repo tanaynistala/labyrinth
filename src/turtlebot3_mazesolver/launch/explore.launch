@@ -1,0 +1,47 @@
+<launch>
+
+  <arg name="rviz_arg" default="-d $(find turtlebot_mazesolver)/rviz/explore.rviz" />
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="world" default="maze1" doc="maze world [maze1, maze2]"/>
+  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector, karto, frontier_exploration]"/>
+  <arg name="x_pos" default="0"/>
+  <arg name="y_pos" default="0"/>
+
+  <!-- Turtlebot3 Gazebo -->
+  <!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
+    <arg name="model" value="$(arg model)"/>
+    <arg name="x_pos" value="-2.0"/>
+  </include> -->
+
+  <!-- Simulation world and node -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find turtlebot_mazesolver)/worlds/$(arg world)/world.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -param robot_description" /> 
+
+  <!-- Turtlebot3 Navigation -->
+  <include file="$(find turtlebot3_navigation)/launch/move_base.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+
+  <!-- Turtlebot3 SLAM -->
+  <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+    <arg name="slam_methods" value="$(arg slam_methods)" />
+    <arg name="open_rviz"    value="false" />
+  </include>
+
+  <!-- Node for autonomous mapping -->
+  <!-- <node name="explore" pkg="turtlebot_mazesolver" type="explore.py" output="screen"/> -->
+
+  <!-- Rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="$(arg rviz_arg)"/>
+    
+</launch>
