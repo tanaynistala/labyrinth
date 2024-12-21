@@ -15,14 +15,9 @@
 
 \maketitle
 
-% for final report only
-%\begin{abstract}
-%A one paragraph high level description of the work. The abstract is typically the first thing someone would read from the paper before deciding whether to continue reading and hence, serves as an advertisement to the reader to read the whole paper. 
-%\end{abstract}
 
 \section{Introduction}
 
-%The introduction should describe the problem (in a non-technical manner, i.e., without math, equations, etc.), as well as motivate the problem, i.e., why is it important?
 
 In the field of robotics, maze solution by a robot is an interesting challenge because of the localization and path finding algorithms used to perform it. This specific application of path finding and localization can be used for finding the best ways for a robot to navigate a space efficiently and safely, and has been used for the development of many path finding algorithms. Dynamic robot path finding that adapts to obstacles in surroundings can be used for many useful tasks for robots, like finding its way through unknown areas of people or difficult terrain. Robots that conduct tours, scout out areas unreachable by people, and map out terrain can all use algorithms like these to gather information more effectively. 
 
@@ -66,11 +61,7 @@ generates is not optimal. Combining the two results in a solid algorithm for sit
 
 In our project, we use the Turtlebot to accomplish these objectives. Thale et. al 2020 goes into the details of various SLAM algorithms used with ROS and the Turtlebot framework. We used their work and this paper as a guide for our project and experiments. Throughout the paper they detail simulating a mobile robot capable of visually detecting and
 avoiding static obstacles using SLAM and reaching the desired
-location autonomously. In the paper, they primarily use Gmapping SLAM with a particle filter for localization. We sought to evaluate the different approaches to accomplishing this with the Turtlebot3 framework and simulation, detailed in the coming sections. 
-
-%Following, you should provide the necessary background and discuss related work in the Prob Rob literature. This section should also be about a page. Citations should be in BibTeX format \citep{thrun2005probabilistic}.
-
-
+location autonomously. In the paper, they primarily use Gmapping SLAM with a particle filter for localization. We sought to evaluate the different approaches, but testing with other algorithms, to accomplishing this with the Turtlebot3 framework and simulation, detailed in the coming sections. 
 
 \section{Approach}
 
@@ -122,9 +113,10 @@ We are using Gazebo to visualize the mazes that the Turtlebot will be attempting
 
 \section{Experiment}
 
-Our experiments were conducted across multiple mazes multiple mazes multiple times in order to get an accurate representation of each of the SLAM algorithms in different contexts. Below are pictures of the three mazes, shown in Gazebo:
+We wanted to do an experiment on how SLAM algorithms would quickly and efficiently let the Turtlebot traverse several mazes, which would hopefully give us an insight on where future research and/or improvements could be done on real Turtlebots to map out unknown locations swiftly. 
 
-{\bf Mazes:}
+Instead of just using GMapping, as previous papers have done, we are also using Hector and Karto. Each algorithm will be run on each of the three mazes below in order to get an accurate representation of each of the SLAM algorithms in different contexts. Below are pictures of the three mazes, shown in Gazebo:
+
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{0.3\textwidth}
@@ -147,7 +139,7 @@ Our experiments were conducted across multiple mazes multiple mazes multiple tim
 \end{figure}
 
 \subsection{Results}
-
+After making the mazes, we launched the script in ROS, set the goal in Rviz for the Turtlebot to navigate to, and timed each run. 
 In addition to the time it took to run through the maze, the map that each of the SLAM algorithms generated is reported. 
 
 {\bf Maze 3, GMapping:}
@@ -207,18 +199,28 @@ In addition to the time it took to run through the maze, the map that each of th
 \\
 It is worth noting that the Hector algorithm, while performing well, took multiple tries to work and fine tuning to the parameters of the robot, since it was an algorithm designed for a very specific context. 
 
+\subsection{Analysis of Results}
+Maze 1 and Maze 3 all had similar results, meaning that each Turtlebot, guided by its respective algorithm, was able to successfully traverse the maze on its own, even for Karto, when we were guiding it step by step towards the goal, because its sensor measurement is limited and only has a very small view of its surroundings. This can probably be attributed to each maze's simple design, and lack of confounding direction. 
 
-% for proposal
-%\section{Experiments and Evaluation}
+However, Maze 4 demonstrates vastly different times between Gmapping, Hector, and Karto. Gmapping takes the longest, but it is able to successfully navigate by itself to the goal without any help by the user. Hector is a bit more complicated. It tries to navigate to the goal by itself, but gets stuck at this corner of the maze: 
+\pagebreak
 
-%Describe how you will evaluate your approach/solution. What constitutes success? What metrics will you use? Do you have any preliminary hypothesis that you plan to test? Also, describe the RL domain or environment you plan to use. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{maze_4_hector_trial_1.png} 
+\end{figure}
 
-% for final report
+
+We had to restart Hector's run through. Finally, on the third run, before it got too stuck in the corner, we guided it to the goal, culminating in the shorter runtime. Karto took the shortest time because of its limited measurement of the world around it, letting the user simply guide it through the maze. 
+
+This experiment demonstrated each algorithm's flaws and strengths well. Gmapping handles large and sparse maps well, perfect for traversing a maze with a wide space, but maybe if the walls were tighter and smaller, its computationally expensive approach with particle filters may fail. While Hector is incredibly precise, when its odometry fails or when there is a large map (like maze 4), it will start to fail. Karto is extremely accurate in large environments, but needs a lot of updates and has a limited worldview, which may not be great in a maze with a lot of features. 
+
+
 \section{Conclusion and Future Work}
 
-In conclusion, (restating of results). 
+In conclusion, using different SLAM algorithms to traverse a maze highlighted each algorithm's flaws and strengths. Although we used a maze with quite a wide space, to really hone in and deconstruct each algorithm specifically would require making mazes of all different kinds, or adding some other feature, like obstacles, that the Turtlebot would need to avoid. 
 
-For future work, it would be interesting to be able to redo this experiment with a physical robot to see how the simulation differs from real life, and compare the accuracy. The simulation can help form a basis of beliefs for how the different algorithms can perform for both path-finding and SLAM. Additionally, more dynamic environments can be used to further test the algorithms in different scenarios to see which is best for each task. 
+For future work, it would be interesting to be able to redo this experiment with a physical robot to see how the simulation differs from real life, and compare the accuracy. The simulation can help form a basis of beliefs for how the different algorithms can perform for both path-finding and SLAM. Additionally, more dynamic environments can be used to further test the algorithms in different scenarios to see which is best for each task. Hopefully, a team can take on these experiments to further improve a robot's path-finding, localization, and/or mapping abilities, which will make it even more useful and efficient in aiding humans in certain tasks, or open up new applications of these techniques and algorithms in the field. 
 
 \bibliographystyle{plain}
 \begin{thebibliography}{9}
